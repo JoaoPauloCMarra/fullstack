@@ -27,6 +27,12 @@
       "projectType": "application",
       "generators": {},
       "targets": {
+        "fix": {
+          "builder": "@nrwl/workspace:run-script",
+          "options": {
+            "script": "fix"
+          }
+        },
         "start": {
           "executor": "@nrwl/react-native:start",
           "options": {
@@ -58,10 +64,7 @@
         },
         "build-android": {
           "executor": "@nrwl/react-native:build-android",
-          "outputs": [
-            "apps/mobile/android/app/build/outputs/bundle",
-            "apps/mobile/android/app/build/outputs/apk"
-          ],
+          "outputs": ["apps/mobile/android/app/build/outputs/bundle", "apps/mobile/android/app/build/outputs/apk"],
           "options": {}
         },
         "bundle-android": {

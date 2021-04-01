@@ -15,5 +15,5 @@ module.exports = withNxMetro(
     // Change this to true to see debugging info.
     // Useful if you have issues resolving modules
     debug: false,
-  }
+  },
 );

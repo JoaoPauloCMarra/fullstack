@@ -1,7 +1,7 @@
 {
   "name": "nx-fullstack",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "JoaoPauloCMarra",
@@ -14,7 +14,6 @@
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
-    "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",

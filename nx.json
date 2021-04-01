@@ -18,16 +18,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "app:start",
-          "app:test",
-          "app:ios",
-          "app:android"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e", "app:start", "app:test", "app:ios", "app:android"]
       }
     }
   },

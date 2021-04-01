@@ -6,10 +6,7 @@ const copyFilePromise = util.promisify(fs.copyFile);
 async function fixIosBuild() {
   const src = './find-node.sh';
   const target = '../node_modules/react-native/scripts/find-node.sh';
-  const exec = copyFilePromise(
-    path.join(__dirname, src),
-    path.join(__dirname, target)
-  );
+  const exec = copyFilePromise(path.join(__dirname, src), path.join(__dirname, target));
   exec.then(() => console.log('done'));
   exec.catch(console.error);
 }

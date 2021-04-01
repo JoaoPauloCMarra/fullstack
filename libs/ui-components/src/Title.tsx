@@ -7,12 +7,7 @@ interface Props {
   textAlign?: 'left' | 'right' | 'center' | 'justify';
 }
 
-const Title: React.FC<Props> = ({
-  children,
-  fontSize = 16,
-  color = '#000',
-  textAlign = 'left',
-}) => {
+const Title: React.FC<Props> = ({ children, fontSize = 16, color = '#000', textAlign = 'left' }) => {
   const style: TextStyle = {
     fontSize,
     color,

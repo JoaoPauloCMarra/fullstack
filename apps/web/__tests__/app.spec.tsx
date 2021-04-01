@@ -10,7 +10,7 @@ describe('App', () => {
     const { baseElement } = render(
       <BrowserRouter>
         <App />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     expect(baseElement).toBeTruthy();
@@ -20,7 +20,7 @@ describe('App', () => {
     const { getByText } = render(
       <BrowserRouter>
         <App />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     expect(getByText('Web')).toBeTruthy();
