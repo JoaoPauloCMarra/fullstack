@@ -1,0 +1,14 @@
+{
+  "name": "mobile",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "fix": "node ./workaround/fix.js"
+  },
+  "dependencies": {
+    "react-native": "*",
+    "react": "*",
+    "@testing-library/react-native": "*",
+    "@testing-library/jest-native": "*"
+  }
+}

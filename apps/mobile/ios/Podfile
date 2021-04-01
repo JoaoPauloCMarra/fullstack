@@ -1,0 +1,24 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@nrwl/react-native/nx_post_install'
+
+platform :ios, '10.0'
+
+target 'Mobile' do
+  config = use_native_modules!
+  puts config
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    :hermes_enabled => true
+  )
+
+  use_flipper!()
+
+  post_install do |installer|
+    flipper_post_install(installer)
+    nx_post_install(installer)
+  end
+end
