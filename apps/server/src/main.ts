@@ -1,8 +1,7 @@
 import Server from './app/Server';
-import { config } from './app/Config';
 
 try {
-  Server(config);
+  Server();
 } catch (error) {
   console.error(error);
 }

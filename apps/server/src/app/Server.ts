@@ -5,12 +5,12 @@ import * as mount from 'koa-mount';
 import * as graphqlHTTP from 'koa-graphql';
 import * as winston from 'winston';
 
-import { Config, isDevMode } from './Config';
+import { config, isDevMode } from './Config';
 import { logger } from './Logger';
 import schema from './graphql/Schema';
 import rootValue from './graphql/Resolvers';
 
-const Server = (config: Config) => {
+const Server = () => {
   const app = new Koa();
   // Provides important security headers to make your app more secure
   app.use(helmet({ contentSecurityPolicy: isDevMode ? false : undefined }));
