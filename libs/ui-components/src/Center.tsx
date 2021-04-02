@@ -7,7 +7,7 @@ interface Props {
   height?: number | string;
 }
 
-const Center: React.FC<Props> = ({ children, width = '100%', height = '100%', backgroundColor = '#f2f2f2' }) => {
+const Center: React.FC<Props> = ({ children, width = '100%', height = '100%', backgroundColor = '#fff' }) => {
   const style: ViewStyle = {
     flex: 1,
     backgroundColor,
