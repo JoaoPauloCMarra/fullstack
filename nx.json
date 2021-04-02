@@ -1,18 +1,13 @@
 {
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "nx-fullstack",
   "tasksRunnerOptions": {
     "default": {
@@ -23,18 +18,10 @@
     }
   },
   "projects": {
-    "mobile": {
-      "tags": []
-    },
-    "ui-components": {
-      "tags": []
-    },
-    "web": {
-      "tags": []
-    },
-    "web-e2e": {
-      "tags": [],
-      "implicitDependencies": ["web"]
-    }
+    "mobile": { "tags": [] },
+    "ui-components": { "tags": [] },
+    "web": { "tags": [] },
+    "web-e2e": { "tags": [], "implicitDependencies": ["web"] },
+    "server": { "tags": [] }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "dotenv": "*",
+    "winston": "*",
+    "graphql": "*",
+    "koa": "*",
+    "@koa/cors": "*",
+    "koa-helmet": "*",
+    "koa-mount": "*",
+    "koa-graphql": "*"
+  }
+}
