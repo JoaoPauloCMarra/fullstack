@@ -3,15 +3,15 @@ import React from 'react';
 import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 
-import { Title } from '@nx-fullstack/ui-components';
+import { Text } from '@nx-fullstack/ui-components';
 
 test('renders correctly', () => {
   const text = 'It Works!';
   const { root } = renderer.create(
     <View>
-      <Title>{text}</Title>
+      <Text>{text}</Text>
     </View>,
   );
-  const { props } = root.findByType(Title);
+  const { props } = root.findByType(Text);
   expect(props.children).toBe(text);
 });

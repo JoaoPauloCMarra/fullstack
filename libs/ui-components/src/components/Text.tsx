@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextStyle } from 'react-native';
+import { Text as RNText, TextStyle } from 'react-native';
 
 interface Props {
   testID?: string;
@@ -8,17 +8,17 @@ interface Props {
   textAlign?: 'left' | 'right' | 'center' | 'justify';
 }
 
-const Title: React.FC<Props> = ({ testID, children, fontSize = 16, color = '#000', textAlign = 'left' }) => {
+const Text: React.FC<Props> = ({ testID, children, fontSize = 16, color = '#000', textAlign = 'left' }) => {
   const style: TextStyle = {
     fontSize,
     color,
     textAlign,
   };
   return (
-    <Text style={style} testID={testID}>
+    <RNText style={style} testID={testID}>
       {children}
-    </Text>
+    </RNText>
   );
 };
 
-export default Title;
+export default Text;

@@ -1,10 +1,21 @@
 import React from 'react';
-import { Center, Title } from '@nx-fullstack/ui-components';
+import { Center, Text, useFetchRandomUser } from '@nx-fullstack/ui-components';
 
 const App: React.FC = () => {
+  const { loading, error, data } = useFetchRandomUser();
+
   return (
     <Center>
-      <Title>Web</Title>
+      {error && error.message && <Text color="red">{error.message}</Text>}
+      {loading && <Text>loading...</Text>}
+      {!error && !loading && (
+        <>
+          <Text>Web</Text>
+          <Text>
+            {data.name} - {data.email}
+          </Text>
+        </>
+      )}
     </Center>
   );
 };

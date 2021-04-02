@@ -1,12 +1,24 @@
 import React from 'react';
-import { Center, Title } from '@nx-fullstack/ui-components';
+import { ActivityIndicator } from 'react-native';
+import { Center, Text, useFetchRandomUser } from '@nx-fullstack/ui-components';
 
 import { displayName as name } from '../../app.json';
 
 const App: React.FC = () => {
+  const { loading, error, data } = useFetchRandomUser();
+
   return (
     <Center>
-      <Title testID="screen-title">{name}</Title>
+      {error && error.message && <Text color="red">{error.message}</Text>}
+      {loading && <ActivityIndicator color="#000" />}
+      {!error && !loading && (
+        <>
+          <Text>{name}</Text>
+          <Text>
+            {data.name} - {data.email}
+          </Text>
+        </>
+      )}
     </Center>
   );
 };

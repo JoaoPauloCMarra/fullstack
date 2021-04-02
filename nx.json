@@ -19,9 +19,9 @@
   },
   "projects": {
     "mobile": { "tags": [] },
-    "ui-components": { "tags": [] },
     "web": { "tags": [] },
     "web-e2e": { "tags": [], "implicitDependencies": ["web"] },
-    "server": { "tags": [] }
+    "server": { "tags": [] },
+    "ui-components": { "tags": [] }
   }
 }

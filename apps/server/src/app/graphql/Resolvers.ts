@@ -1,5 +1,9 @@
+import User from './models/User';
+
 const Resolvers = {
-  hello: () => 'Hello world!',
+  Query: {
+    ...User,
+  },
 };
 
 export default Resolvers;
