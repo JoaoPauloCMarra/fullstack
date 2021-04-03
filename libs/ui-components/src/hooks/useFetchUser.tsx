@@ -1,5 +1,4 @@
 import { gql, useQuery } from '@apollo/client';
-import { useMemo } from 'react';
 
 type Params = {
   id: string;
@@ -12,18 +11,16 @@ name
 email
 `;
 
-const useFetchUser = ({ id, fields = defaultFields }: Params) => {
-  const query = useMemo(
-    () => gql`
-      query User($id: String!) {
-        user(id: $id) {
-          ${fields}
-        }
-      }
-    `,
-    [fields],
-  );
-  const { data, loading, error } = useQuery(query);
+export const query = (fields: string) => gql`
+query User($id: String!) {
+  user(id: $id) {
+    ${fields || defaultFields}
+  }
+}
+`;
+
+const useFetchUser = ({ id, fields }: Params) => {
+  const { data, loading, error } = useQuery(query(fields), { variables: { id } });
 
   if (error) {
     return { error };

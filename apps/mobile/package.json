@@ -9,6 +9,10 @@
     "react-native": "*",
     "react": "*",
     "@testing-library/react-native": "*",
-    "@testing-library/jest-native": "*"
+    "@testing-library/jest-native": "*",
+    "react-native-web": "*",
+    "react-test-renderer": "*",
+    "@apollo/client": "*",
+    "@testing-library/react": "*"
   }
 }

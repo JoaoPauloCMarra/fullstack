@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import * as chalk from 'chalk';
 import * as Koa from 'koa';
 import * as cors from '@koa/cors';
@@ -7,11 +8,10 @@ import { ApolloServer } from 'apollo-server-koa';
 
 import { config, isDevMode } from './Config';
 import { logger } from './Logger';
-import typeDefs from './graphql/Schema';
-import resolvers from './graphql/Resolvers';
+import schema from './graphql/Schema';
 
 const Server = async () => {
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const server = new ApolloServer({ schema: await schema });
   await server.start();
 
   const app = new Koa();

@@ -1,18 +1,16 @@
-import { gql } from 'apollo-server-koa';
+import * as path from 'path';
+import { magenta } from 'chalk';
+import { buildSchema } from 'type-graphql';
 
-// temp Schema
-const Schema = gql`
-  type User {
-    id: String
-    name: String
-    email: String
-  }
+import { UserResolver } from './models/User';
 
-  type Query {
-    user(id: String): User
-    randomUser: User
-    users: [User]
-  }
-`;
+const schemaFilePath = path.resolve(__dirname, 'schema.gql');
+console.log(magenta(`Schema generated at ${schemaFilePath}`));
+
+const Schema = buildSchema({
+  resolvers: [UserResolver],
+  emitSchemaFile: schemaFilePath,
+  validate: false,
+});
 
 export default Schema;
