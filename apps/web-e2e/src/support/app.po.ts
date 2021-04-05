@@ -1,1 +1,1 @@
-export const getGreeting = () => cy.get('h1');
+export const getComponentByTestID = (testID: string) => cy.get(`[data-testid=${testID}]`);

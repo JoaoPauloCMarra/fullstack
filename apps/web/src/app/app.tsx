@@ -10,7 +10,7 @@ const App: React.FC = () => {
       {loading && <Text>loading...</Text>}
       {!error && !loading && (
         <>
-          <Text>Web</Text>
+          <Text testID="title">Web</Text>
           <Text>
             {data.name} - {data.email}
           </Text>

@@ -26,6 +26,8 @@ yarn web:lint - lints the code
 yarn web:test - tests the code
 yarn web:build - builds the code
 
+yarn cypress - runn E2E tests
+
 yarn app:start - run and watch for changes
 yarn app:ios - run the app in a ios simulator
 yarn app:android -  run the app in a android emulator

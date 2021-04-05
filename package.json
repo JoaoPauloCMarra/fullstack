@@ -41,7 +41,8 @@
     "app:android": "nx fix mobile && nx run-android mobile",
     "app:test": "nx test mobile",
     "ui-comp:lint": "nx lint ui-components",
-    "ui-comp:test": "nx test ui-components"
+    "ui-comp:test": "nx test ui-components",
+    "cypress": "nx e2e web-e2e"
   },
   "dependencies": {
     "@apollo/client": "^3.3.13",
