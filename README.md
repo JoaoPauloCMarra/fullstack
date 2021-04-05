@@ -34,4 +34,10 @@ yarn app:test - tests the code
 
 yarn ui-comp:lint - lints the code
 yarn ui-comp:test - tests the code
+
+
+
+yarn build - builds eligible apps/libs
+yarn test - tests eligible apps/libs
+yarn lint - lints eligible apps/libs
 ```
