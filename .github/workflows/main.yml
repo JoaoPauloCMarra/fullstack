@@ -1,0 +1,37 @@
+name: Main CI
+
+on:
+  push:
+    branches: [$default-branch]
+  pull_request:
+    branches: [$default-branch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Validate branch
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@master
+      - uses: c-hive/gha-yarn-cache@v1
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Lint Workspace
+        run: yarn lint
+
+      - name: Test Workspace
+        run: yarn test
+
+      - name: Build Workspace
+        run: yarn build

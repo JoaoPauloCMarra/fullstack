@@ -12,7 +12,7 @@
     "nx": "nx",
     "build": "npm-run-all server:build web:build",
     "test": "npm-run-all server:test app:test web:test ui-comp:test",
-    "lint": "nx workspace-lint && nx lint",
+    "lint": "npm-run-all server:lint app:lint web:lint ui-comp:lint",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",
@@ -40,6 +40,7 @@
     "app:ios": "nx fix mobile && nx run-ios mobile",
     "app:android": "nx fix mobile && nx run-android mobile",
     "app:test": "nx test mobile",
+    "app:lint": "nx lint mobile",
     "ui-comp:lint": "nx lint ui-components",
     "ui-comp:test": "nx test ui-components",
     "cypress": "nx e2e web-e2e"
@@ -117,8 +118,10 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "jest-react-native": "^18.0.0",
+    "lint-staged": "^10.5.4",
     "metro": "^0.65.2",
     "metro-react-native-babel-preset": "^0.65.2",
     "metro-resolver": "^0.65.2",
@@ -135,5 +138,15 @@
     "ts-node": "^9.1.1",
     "type-graphql": "^1.1.1",
     "typescript": "~4.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts,jsx,js,json,css,html,md,graphql}": [
+      "nx format:write --all"
+    ]
   }
 }
