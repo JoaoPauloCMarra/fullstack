@@ -27,6 +27,12 @@
       "projectType": "application",
       "generators": {},
       "targets": {
+        "appjson": {
+          "executor": "@nrwl/workspace:run-script",
+          "options": {
+            "script": "appjson"
+          }
+        },
         "fix": {
           "executor": "@nrwl/workspace:run-script",
           "options": {

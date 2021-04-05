@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "appjson": "node ./workaround/appjson.js",
     "fix": "node ./workaround/fix.js"
   },
   "dependencies": {
