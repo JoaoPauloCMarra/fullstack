@@ -2,7 +2,7 @@ import React from 'react';
 import { ActivityIndicator } from 'react-native';
 import { Constants, Center, Text, useFetchRandomUser } from '@nx-fullstack/ui-components';
 
-import { displayName as name } from '../../app.json';
+import { displayName as name } from '../app.json';
 
 const App: React.FC = () => {
   const { loading, error, data } = useFetchRandomUser();

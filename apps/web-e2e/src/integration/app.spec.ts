@@ -7,6 +7,6 @@ describe('web', () => {
     // Custom command example, see `../support/commands.ts` file
     // cy.login('my-email@something.com', 'myPassword');
 
-    getComponentByTestID('title').contains('Web');
+    getComponentByTestID('title').contains('Web (platform: web)');
   });
 });
