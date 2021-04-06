@@ -3,11 +3,13 @@ name: Main CI
 on: [push, pull_request, release]
 
 jobs:
-  ci:
+  validate_commit:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         node-version: [12.x]
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -31,11 +33,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --pure-lockfile
 
-      - name: Liting
+      - name: Lint
         run: yarn lint
 
-      - name: Testing
+      - name: Test
         run: yarn test
 
-      - name: Building
+      - name: Build
         run: yarn build

@@ -1,5 +1,7 @@
 # Fullstack Application
 
+![fullstack workflow](https://github.com/JoaoPauloCMarra/fullstack/actions/workflows/main.yml/badge.svg)
+
 - Mobile with React Native
 - Web with React
 - Shared UI Component Library between Web and Mobile
