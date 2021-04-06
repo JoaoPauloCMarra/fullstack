@@ -16,15 +16,15 @@ Add more features
 
 `yarn install` to install dependencies
 
-`yarn build` - builds the workspace code with prettier
+`yarn build` - builds the workspace code
 
-`yarn test` - tests the workspace code with prettier
+`yarn test` - tests the workspace code
 
-`yarn lint` - lints the workspace code with prettier
+`yarn lint` - lints the workspace code
 
-`yarn format` - formats the changed workspace code with prettier
+`yarn format` - formats the changed workspace code
 
-`yarn format:all` - formats the whole workspace code with prettier
+`yarn format:all` - formats the whole workspace code
 
 `yarn dep-graph` - open the workspace dependencies graph on the browser
 
