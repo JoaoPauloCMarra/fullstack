@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
-import { Center, Text, useFetchRandomUser } from '@nx-fullstack/ui-components';
+import { Constants, Center, Text, useFetchRandomUser } from '@nx-fullstack/ui-components';
 
 import { displayName as name } from '../../app.json';
 
@@ -13,7 +13,9 @@ const App: React.FC = () => {
       {loading && <ActivityIndicator color="#000" />}
       {!error && !loading && (
         <>
-          <Text>{name}</Text>
+          <Text>
+            {name} (platform: {Constants.platform})
+          </Text>
           <Text>
             {data.name} - {data.email}
           </Text>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Center, Text, useFetchRandomUser } from '@nx-fullstack/ui-components';
+import { Center, Constants, Text, useFetchRandomUser } from '@nx-fullstack/ui-components';
 
 const App: React.FC = () => {
   const { loading, error, data } = useFetchRandomUser();
@@ -10,7 +10,7 @@ const App: React.FC = () => {
       {loading && <Text>loading...</Text>}
       {!error && !loading && (
         <>
-          <Text testID="title">Web</Text>
+          <Text testID="title">Web (platform: {Constants.platform})</Text>
           <Text>
             {data.name} - {data.email}
           </Text>

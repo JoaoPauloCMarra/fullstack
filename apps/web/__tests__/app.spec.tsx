@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { MockedProvider } from '@apollo/client/testing';
 
-import App from '../src/app/app';
+import App from '../src/app/App';
 
 describe('App', () => {
   it('should render successfully', () => {
