@@ -9,41 +9,29 @@
     "url": "https://github.com/JoaoPauloCMarra"
   },
   "scripts": {
-    "nx": "nx",
     "build": "npm-run-all server:build web:build",
     "test": "npm-run-all server:test app:test web:test ui-comp:test",
     "lint": "npm-run-all server:lint app:lint web:lint ui-comp:lint",
-    "affected:apps": "nx affected:apps",
-    "affected:libs": "nx affected:libs",
-    "affected:build": "nx affected:build",
-    "affected:e2e": "nx affected:e2e",
-    "affected:test": "nx affected:test",
-    "affected:lint": "nx affected:lint",
-    "affected:dep-graph": "nx affected:dep-graph",
-    "affected": "nx affected",
-    "format": "nx format:write",
-    "format:write": "nx format:write",
-    "format:check": "nx format:check",
-    "update": "nx migrate latest",
-    "workspace-generator": "nx workspace-generator",
-    "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "server:serve": "nx serve server",
+    "format": "nx format:write --base=main --head=HEAD",
+    "format:all": "nx format:write --all",
+    "dep-graph": "nx dep-graph --base=main --head=HEAD",
+    "server:dev": "nx serve server",
     "server:lint": "nx lint server",
     "server:test": "nx test server",
     "server:build": "nx build server",
-    "web:serve": "nx serve web",
+    "web:dev": "nx serve web",
     "web:lint": "nx lint web",
     "web:test": "nx test web",
     "web:build": "nx build web",
-    "app:start": "nx start mobile",
+    "app:dev": "nx start mobile",
     "app:ios": "nx fix mobile && nx run-ios mobile",
     "app:android": "nx fix mobile && nx run-android mobile",
     "app:test": "nx test mobile",
     "app:lint": "nx lint mobile",
     "ui-comp:lint": "nx lint ui-components",
     "ui-comp:test": "nx test ui-components",
-    "cypress": "nx e2e web-e2e"
+    "cypress": "nx e2e web-e2e",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@apollo/client": "^3.3.13",
@@ -118,10 +106,8 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
-    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "jest-react-native": "^18.0.0",
-    "lint-staged": "^10.5.4",
     "metro": "^0.65.2",
     "metro-react-native-babel-preset": "^0.65.2",
     "metro-resolver": "^0.65.2",
@@ -138,16 +124,6 @@
     "ts-node": "^9.1.1",
     "type-graphql": "^1.1.1",
     "typescript": "~4.0.3"
-  },
-  "lint-staged": {
-    "*": [
-      "yarn format:write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "engines": {
     "node": ">=12"

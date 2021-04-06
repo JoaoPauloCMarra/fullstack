@@ -18,5 +18,6 @@
       "@nx-fullstack/ui-components": ["libs/ui-components/src/index.ts"]
     }
   },
+  "include": ["**/*.d.ts"],
   "exclude": ["node_modules", "tmp"]
 }

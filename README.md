@@ -1,6 +1,6 @@
-# Fullstack Application
-
 ![fullstack workflow](https://github.com/JoaoPauloCMarra/fullstack/actions/workflows/main.yml/badge.svg)
+
+# Fullstack Application
 
 - Mobile with React Native
 - Web with React
@@ -16,30 +16,50 @@ Add more features
 
 `yarn install` to install dependencies
 
-```txt
-yarn server:serve - run and watch for changes
-yarn server:lint - lints the code
-yarn server:test - tests the code
-yarn server:build - builds the code
+`yarn build` - builds the workspace code with prettier
 
-yarn web:serve - run and watch for changes
-yarn web:lint - lints the code
-yarn web:test - tests the code
-yarn web:build - builds the code
+`yarn test` - tests the workspace code with prettier
 
-yarn cypress - runn E2E tests
+`yarn lint` - lints the workspace code with prettier
 
-yarn app:start - run and watch for changes
-yarn app:ios - run the app in a ios simulator
-yarn app:android -  run the app in a android emulator
-yarn app:test - tests the code
+`yarn format` - formats the changed workspace code with prettier
 
-yarn ui-comp:lint - lints the code
-yarn ui-comp:test - tests the code
+`yarn format:all` - formats the whole workspace code with prettier
 
+`yarn dep-graph` - open the workspace dependencies graph on the browser
 
+`yarn server:dev` - run and watch for changes
 
-yarn build - builds eligible apps/libs
-yarn test - tests eligible apps/libs
-yarn lint - lints eligible apps/libs
-```
+`yarn server:lint` - lints the code
+
+`yarn server:test` - tests the code
+
+`yarn server:build` - builds the code
+
+`yarn web:dev` - run and watch for changes
+
+`yarn web:lint` - lints the code
+
+`yarn web:test` - tests the code
+
+`yarn web:build` - builds the code
+
+`yarn cypress` - runn E2E tests
+
+`yarn app:dev` - run and watch for changes
+
+`yarn app:ios` - run the app in a ios simulator
+
+`yarn app:android` - run the app in a android emulator
+
+`yarn app:test` - tests the code
+
+`yarn ui-comp:lint` - lints the code
+
+`yarn ui-comp:test` - tests the code
+
+`yarn build` - builds eligible apps/libs
+
+`yarn test` - tests eligible apps/libs
+
+`yarn lint` - lints eligible apps/libs
