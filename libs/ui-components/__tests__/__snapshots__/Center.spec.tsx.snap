@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render successfully 1`] = `
+exports[`renders correctly 1`] = `
 <div
   className="css-view-1dbjc4n"
   style={
@@ -21,21 +21,5 @@ exports[`App should render successfully 1`] = `
       "width": "100%",
     }
   }
->
-  <div
-    className="css-text-901oao"
-    dir="auto"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "rgba(249,249,249,1.00)",
-        "fontSize": "22px",
-        "fontWeight": "bold",
-        "textAlign": "left",
-      }
-    }
-  >
-    loading...
-  </div>
-</div>
+/>
 `;
