@@ -3,4 +3,5 @@
 
 yarn format:all
 yarn lint
+yarn test
 git add .
