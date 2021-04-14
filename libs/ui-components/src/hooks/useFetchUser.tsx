@@ -6,28 +6,28 @@ type Params = {
 };
 
 const defaultFields = `
-id
-name
-email
+  id
+  name
+  email
 `;
 
 export const query = (fields: string) => gql`
-query User($id: String!) {
-  user(id: $id) {
-    ${fields || defaultFields}
+  query User($id: String!) {
+    user(id: $id) {
+      ${fields || defaultFields}
+    }
   }
-}
 `;
 
 const useFetchUser = ({ id, fields }: Params) => {
-  const { data, loading, error } = useQuery(query(fields), { variables: { id } });
-
-  if (error) {
-    return { error };
-  }
+  const { data, loading, error, refetch } = useQuery(query(fields), { variables: { id } });
 
   if (loading) {
-    return { loading };
+    return { loading, refetch: () => null };
+  }
+
+  if (error) {
+    return { error, refetch };
   }
 
   return {
@@ -36,6 +36,7 @@ const useFetchUser = ({ id, fields }: Params) => {
       name: data.user?.name || '',
       email: data.user?.email || '',
     },
+    refetch,
   };
 };
 

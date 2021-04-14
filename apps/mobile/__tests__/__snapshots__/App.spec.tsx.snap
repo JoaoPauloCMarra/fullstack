@@ -11,7 +11,7 @@ exports[`App should render successfully 1`] = `
       "WebkitFlex": 1,
       "WebkitJustifyContent": "center",
       "alignItems": "center",
-      "backgroundColor": "rgba(255,255,255,1.00)",
+      "backgroundColor": "rgba(32,32,36,1.00)",
       "flex": 1,
       "height": "100%",
       "justifyContent": "center",

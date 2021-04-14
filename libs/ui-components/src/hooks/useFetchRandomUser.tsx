@@ -5,28 +5,28 @@ type Params = {
 };
 
 const defaultFields = `
-id
-name
-email
+  id
+  name
+  email
 `;
 
 export const query = (fields: string) => gql`
-query User {
-  randomUser {
-    ${fields || defaultFields}
+  query User {
+    randomUser {
+      ${fields || defaultFields}
+    }
   }
-}
 `;
 
 const useFetchRandomUser = ({ fields }: Params = {}) => {
-  const { data, loading, error } = useQuery(query(fields));
-
-  if (error) {
-    return { error };
-  }
+  const { data, loading, error, refetch } = useQuery(query(fields));
 
   if (loading) {
-    return { loading };
+    return { loading, refetch: () => null };
+  }
+
+  if (error) {
+    return { error, refetch };
   }
 
   return {
@@ -35,6 +35,7 @@ const useFetchRandomUser = ({ fields }: Params = {}) => {
       name: data.randomUser?.name || '',
       email: data.randomUser?.email || '',
     },
+    refetch,
   };
 };
 

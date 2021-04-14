@@ -9,12 +9,14 @@ interface Props {
 const defaultCacheService = new InMemoryCache();
 
 const ApolloWrapper: React.FC<Props> = ({ children, uri = 'http://localhost:5000/graphql', cache }) => {
-  const client = useMemo(() => {
-    return new ApolloClient({
-      uri,
-      cache: cache || defaultCacheService,
-    });
-  }, [uri, cache]);
+  const client = useMemo(
+    () =>
+      new ApolloClient({
+        uri,
+        cache: cache || defaultCacheService,
+      }),
+    [uri, cache],
+  );
 
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
 };

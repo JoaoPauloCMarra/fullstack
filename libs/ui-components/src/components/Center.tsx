@@ -1,14 +1,21 @@
 import React from 'react';
 import { View, ViewStyle } from 'react-native';
+import theme from '../theme';
 
 interface Props {
-  testID?: string;
   backgroundColor?: string;
-  width?: number | string;
   height?: number | string;
+  width?: number | string;
+  testID?: string;
 }
 
-const Center: React.FC<Props> = ({ testID, children, width = '100%', height = '100%', backgroundColor = '#fff' }) => {
+const Center: React.FC<Props> = ({
+  children,
+  backgroundColor = theme.bgColor,
+  height = '100%',
+  width = '100%',
+  testID,
+}) => {
   const style: ViewStyle = {
     flex: 1,
     backgroundColor,
@@ -17,6 +24,7 @@ const Center: React.FC<Props> = ({ testID, children, width = '100%', height = '1
     width,
     height,
   };
+
   return (
     <View style={style} testID={testID}>
       {children}
