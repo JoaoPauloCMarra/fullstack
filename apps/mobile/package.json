@@ -17,6 +17,7 @@
     "@testing-library/react": "*",
     "cheerio": "*",
     "plist": "*",
-    "chalk": "*"
+    "chalk": "*",
+    "color": "*"
   }
 }
